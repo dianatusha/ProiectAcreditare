@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 @DefaultUrl("http://qa5.fasttrackit.org:8008/?page_id=7")
 public class DashboeardTabPage extends PageObject {
 
-    @FindBy()
+    @FindBy(
     private WebElementFacade helloTextParagraph;
 
 
