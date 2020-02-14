@@ -17,6 +17,12 @@ public class HomePage extends PageObject {
     @FindBy(css = ".entry-title a")
     private WebElementFacade helloText;
 
+    @FindBy(css = ".top-header input.search-field")
+    private WebElementFacade searchField;
+
+    @FindBy (css = "#mastheads button.searchsubmit")
+    private WebElementFacade searchButton;
+
     public void clickLoginLink() {
         clickOn(loginLink);
     }
@@ -25,7 +31,12 @@ public class HomePage extends PageObject {
         return helloText.containsOnlyText(text);
     }
 
+    public void insertSearchText(String text){ typeInto(searchField, text);
+    }
 
+    public void clickSearchButton(){
+        clickOn(searchButton);
+    }
 
 
 
