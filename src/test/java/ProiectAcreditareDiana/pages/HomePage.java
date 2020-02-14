@@ -14,10 +14,16 @@ public class HomePage extends PageObject {
     @FindBy(css = "a.account")
     private WebElementFacade loginLink;
 
+    @FindBy(css = ".entry-title a")
+    private WebElementFacade helloText;
+
     public void clickLoginLink() {
         clickOn(loginLink);
     }
 
+    public boolean checkLogOut(String text){
+        return helloText.containsOnlyText(text);
+    }
 
 
 

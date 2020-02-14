@@ -1,15 +1,15 @@
 package ProiectAcreditareDiana.steps.serenity;
 
-import ProiectAcreditareDiana.pages.DashboeardTabPage;
+import ProiectAcreditareDiana.pages.MyAccountPage;
 import ProiectAcreditareDiana.pages.HomePage;
 import ProiectAcreditareDiana.pages.LoginPage;
 import net.thucydides.core.annotations.Step;
-import org.jruby.RubyBoolean;
+import net.thucydides.core.annotations.Steps;
 import org.junit.Assert;
 
 public class LoginSteps {
 
-    private DashboeardTabPage dashboeardTabPage;
+    private MyAccountPage myAccountPage;
     private HomePage homePage;
     private LoginPage loginPage;
 
@@ -37,6 +37,22 @@ public class LoginSteps {
     }
     @Step
     public void checkValidLogin(String user){
-       Assert.assertTrue(dashboeardTabPage.checkHelloText(user));
+       Assert.assertTrue(myAccountPage.checkHelloText(user));
     }
+    @Step
+    public void checkInvalidLogin(String text){
+        Assert.assertTrue(loginPage.checkInvalidLogin(text));
+    }
+
+    @Step
+    public void clickLogOutButoon(){
+        loginPage.clickLogOutButton();
+    }
+
+    @Step
+    public void checkLogOut(String text){
+        Assert.assertTrue(homePage.checkLogOut(text));
+    }
+
+
 }
