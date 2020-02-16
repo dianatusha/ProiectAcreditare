@@ -1,6 +1,6 @@
 package ProiectAcreditareDiana.features.Tests;
 
-import ProiectAcreditareDiana.steps.serenity.LoginSteps;
+import ProiectAcreditareDiana.steps.serenity.CartSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -9,22 +9,21 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class InvalidLoginTest {
+public class CartTest {
 
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
     @Steps
-    private LoginSteps loginSteps;
+    private CartSteps cartSteps;
 
     @Test
-    public void invalidLoginTest() {
-        loginSteps.navigateToHomepage();
-        loginSteps.goToLogin();
-        loginSteps.enterCredentials("diana_tusha@yahoo.com", "Diana");
-        loginSteps.clickLoginButton();
-        loginSteps.checkInvalidLogin("Lost your password?");
-
-
+    public void addProductToCartTest(){
+        cartSteps.navigateToHomepage();
+        cartSteps.clickOnShopHeaderButton();
+        cartSteps.clickOnAddToCartButton();
+        cartSteps.clickOnViewCartButton();
+        cartSteps.checkProductInCart("Album");
     }
+
 }

@@ -23,6 +23,9 @@ public class HomePage extends PageObject {
     @FindBy (css = "#mastheads button.searchsubmit")
     private WebElementFacade searchButton;
 
+    @FindBy(css = "#menu-item-73")
+    private WebElementFacade shopHeaderButton;
+
     public void clickLoginLink() {
         clickOn(loginLink);
     }
@@ -33,9 +36,11 @@ public class HomePage extends PageObject {
 
     public void insertSearchText(String text){ typeInto(searchField, text);
     }
-
     public void clickSearchButton(){
         clickOn(searchButton);
+    }
+    public void clickShopHeaderButton(){
+        clickOn(shopHeaderButton);
     }
 
 

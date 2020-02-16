@@ -27,4 +27,26 @@ public class LoginTest {
         loginSteps.checkValidLogin("diana_tusha");
 
     }
+
+    @Test
+    public void invalidLoginTest() {
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.enterCredentials("diana_tusha@yahoo.com", "Diana");
+        loginSteps.clickLoginButton();
+        loginSteps.checkInvalidLogin("Lost your password?");
+
+    }
+
+    @Test
+    public void logOutTest(){
+        loginSteps.navigateToHomepage();
+        loginSteps.goToLogin();
+        loginSteps.enterCredentials("diana_tusha@yahoo.com", "DianaTusa12");
+        loginSteps.clickLoginButton();
+        loginSteps.clickLogOutButoon();
+        loginSteps.checkLogOut("Hello world!");
+
+    }
+
 }
