@@ -25,7 +25,12 @@ public class SearchSteps {
     }
 
     @Step
-    public void checkSearchResults(String searchResult){
+    public void checkValidSearchResults(String searchResult){
         Assert.assertTrue(searchResultsPage.checkSearchResults(searchResult));
+    }
+
+    @Step
+    public void checkInvalidSearchResult(String invalidSearchResult){
+        Assert.assertTrue(searchResultsPage.checkInvalidSearchResult(invalidSearchResult));
     }
 }

@@ -26,4 +26,11 @@ public class CartTest {
         cartSteps.checkProductInCart("Album");
     }
 
+    @Test
+    public void returnToShopRedirection(){
+        cartSteps.navigateToCartPage();
+        cartSteps.clickReturnToShopButton();
+        cartSteps.checkShopTitleText("SHOP");
+
+    }
 }

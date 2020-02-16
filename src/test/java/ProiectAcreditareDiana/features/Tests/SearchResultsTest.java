@@ -20,12 +20,19 @@ public class SearchResultsTest {
     private SearchSteps searchSteps;
 
     @Test
-    public void searchResultsTest(){
+    public void validSearchResultTest(){
         searchSteps.navigateToHomepage();
         searchSteps.insertTextInSearchField("beanie");
         searchSteps.clickSearchButton();
-        searchSteps.checkSearchResults("SEARCH RESULTS: “BEANIE”");
+        searchSteps.checkValidSearchResults("SEARCH RESULTS: “BEANIE”");
     }
 
+    @Test
+    public void invalidSearchResultTest(){
+        searchSteps.navigateToHomepage();
+        searchSteps.insertTextInSearchField("alabalaportocala");
+        searchSteps.clickSearchButton();
+        searchSteps.checkInvalidSearchResult("No products were found matching your selection.");
+    }
 
 }

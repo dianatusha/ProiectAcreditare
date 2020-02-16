@@ -1,5 +1,6 @@
 package ProiectAcreditareDiana.steps.serenity;
 
+import ProiectAcreditareDiana.pages.CartPage;
 import ProiectAcreditareDiana.pages.CheckOutPage;
 import ProiectAcreditareDiana.pages.HomePage;
 import ProiectAcreditareDiana.pages.ShopPage;
@@ -10,10 +11,16 @@ public class CartSteps {
     private HomePage homePage;
     private ShopPage shopPage;
     private CheckOutPage checkOutPage;
+    private CartPage cartPage;
 
 @Step
 public void navigateToHomepage(){
     homePage.open();}
+
+    @Step
+    public void navigateToCartPage(){
+    cartPage.open();
+    }
 
     @Step
     public void clickOnShopHeaderButton()
@@ -31,6 +38,13 @@ public void navigateToHomepage(){
     @Step
     public void checkProductInCart(String text){
         Assert.assertTrue(checkOutPage.checkProductName(text));
+    }
+
+    @Step
+    public void clickReturnToShopButton(){cartPage.clickReturnToShopButton();}
+
+    @Step
+        public void checkShopTitleText(String text) {Assert.assertTrue(shopPage.checkShopTitleText(text));
     }
 
 

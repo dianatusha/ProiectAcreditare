@@ -26,6 +26,9 @@ public class HomePage extends PageObject {
     @FindBy(css = "#menu-item-73")
     private WebElementFacade shopHeaderButton;
 
+    @FindBy(css = ".bttn.read-more")
+    private WebElementFacade readMoreButton;
+
     public void clickLoginLink() {
         clickOn(loginLink);
     }
@@ -42,6 +45,7 @@ public class HomePage extends PageObject {
     public void clickShopHeaderButton(){
         clickOn(shopHeaderButton);
     }
+    public void clickOnReadMoreButton(){clickOn(readMoreButton);}
 
 
 
